@@ -12,8 +12,6 @@ class DataBaseSettings(BaseModel):
     url: str =  "sqlite+aiosqlite:///./api.db"
     echo: bool = True
     echo_pool: bool = True
-    pool_size: int = 50
-    max_overflow: int = 10
 
 
 
