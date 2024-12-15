@@ -1,5 +1,5 @@
 from sqlalchemy.ext.asyncio import create_async_engine, async_sessionmaker, AsyncSession, AsyncEngine
-from app.core import settings
+from core import settings
 
 class DBHelper:
     def __init__(self, url: str, echo: bool, echo_pool:bool):
