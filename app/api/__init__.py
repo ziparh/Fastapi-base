@@ -1,5 +1,5 @@
 from fastapi import APIRouter
-from app.core import settings
+from core import settings
 
 api_router = APIRouter(prefix=settings.prefix.api)
 routers = []
