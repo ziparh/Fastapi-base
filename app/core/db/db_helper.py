@@ -1,7 +1,7 @@
 from sqlalchemy.ext.asyncio import create_async_engine, async_sessionmaker, AsyncSession, AsyncEngine
 from app.core import settings
 
-class DBManager:
+class DBHelper:
     def __init__(self, url: str, echo: bool, echo_pool:bool):
         self.engine: AsyncEngine = create_async_engine(
             url=url,
@@ -22,7 +22,7 @@ class DBManager:
         async with self.session_factory() as session:
             yield session
 
-db_manager = DBManager(
+db_helper = DBHelper(
     url=settings.db.url,
     echo=settings.db.echo,
     echo_pool=settings.db.echo_pool,
