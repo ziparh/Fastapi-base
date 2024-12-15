@@ -2,17 +2,17 @@ import uvicorn
 from fastapi import FastAPI
 from contextlib import asynccontextmanager
 from core import settings
-from api import router as api_router
+from api import api_router
 from core import db_helper
 
 
 @asynccontextmanager
-def lifespan(api: FastAPI):
+async def lifespan(app: FastAPI):
     # start
     print("Starting app")
     yield
     # shutdown
-    db_helper.dispose()
+    await db_helper.dispose()
     print("Shutting down app")
 
 
